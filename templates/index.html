@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<script src=""></script>
+
+<link rel="stylesheet" href="https://fontawesome.com/icons/youtube?f=brands&s=solid">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+
+<html>
+<head>
+    <title>YouTube Downloader</title>
+</head>
+
+<body>
+    <form method="POST" id="form">
+        <div class="icon">  
+            <svg xmlns="http://www.w3.org/2000/svg" height="74" width="80" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+        </div>
+        <div class="corpo">
+            <label for="url">URL do vídeo do YouTube:</label>
+            <input type="text" id="url" name="url">
+            <input type="hidden" id="download_type" name="download_type">
+            <button type="button" onclick="submitForm('audio')">Baixar áudio</button>
+            <button type="button" onclick="submitForm('video')">Baixar video</button>
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+    function submitForm(type) {
+        document.getElementById('download_type').value = type;
+        document.getElementById('form').submit();
+    }
+</script>
+
+<style>
+    *{
+        font-family: 'Poppins';
+    }
+    .corpo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 50px 40px;
+
+    }
+    .corpo input{
+        border: 1px solid black;
+        width: 90%;
+        border-radius: 5px;
+    }
+    input:focus{
+        outline: none;
+    }
+
+    .icon {
+        fill: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        filter: brightness(0.5);
+        
+    }
+    body {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: rgb(97,55,212);
+        background: linear-gradient(45deg, #6137d4b8 0%, #00d4ffca 100%);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        /* width: 300px; */
+    }
+    input, button {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    label {
+        margin-bottom: 10px;
+    }
+    button {
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        background: #5f2de9b8;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        transition: 0.3s;
+        border-radius: 8px;
+        border: none;
+    }
+    button:hover {
+        color: white;
+        transform: scale(1.05);
+        filter: brightness(0.8);
+    }
+</style>
