@@ -3,4 +3,5 @@ function download(){
     document.getElementById("subButton").disabled = true;
 
     var url = document.getElementById("url").value;
+
 }

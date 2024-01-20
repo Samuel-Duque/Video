@@ -27,7 +27,7 @@ def home():
             ys = yt.streams.get_audio_only()
         else:
             ys = yt.streams.get_highest_resolution()
-
+            
         download_path = ys.download()
         if download_type == 'audio':
             mp4_path = download_path
